@@ -1,0 +1,468 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #3B873E; /* Dark Green */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-icon {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.header-link {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #3B873E;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.user-email {
+    margin-right: 15px;
+    font-size: 16px;
+    color: white;
+}
+
+/* Выровнять ссылку "Вход" по центру вертикально */
+.login-link {
+    display: flex;               /* Используем Flexbox */
+    align-items: center;         /* Вертикальное центрирование */
+    padding: 0 10px;             /* Горизонтальные отступы */
+    margin: 0;                   /* Убираем внешние отступы */
+    font-size: 20px;             /* Размер шрифта */
+    color: white;                /* Цвет текста */
+    text-decoration: none;       /* Убираем подчеркивание */
+    /* Удалено: height: 100%; */
+    transform: translateY(1px);  /* Слегка сдвигаем вниз на 1 пиксель */
+}
+
+.login-link:hover {
+    text-decoration: underline;  /* Подчеркивание при наведении */
+}
+
+/* Logo Styles */
+.logo {
+    max-width: 38px; /* Уменьшенный размер логотипа */
+    margin: 0; /* Обнуляем все отступы */
+    display: flex;
+    align-items: center; /* Выровнять по вертикали внутри контейнера */
+}
+
+/* Sidebar */
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 350px;
+    background-color: #ffffff; /* Тот же фон, что и у body */
+    padding: 20px; /* Общие отступы внутри сайдбара */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    
+    /* Добавим растягивание по высоте */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Занимает всю высоту контейнера */
+}
+
+
+/* Сброс стилей для списка в сайдбаре */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Стили для элементов списка */
+.sidebar ul li {
+    display: flex;
+    align-items: flex-start; /* Выровнять по верхнему краю для лучшего отображения изображений */
+    margin-bottom: 20px;
+}
+
+/* Стили для иконок меню */
+.menu-icon {
+    width: 40px; /* Увеличим размер иконок для лучшей видимости */
+    height: 40px;
+    margin-right: 15px;
+    flex-shrink: 0; /* Запретить уменьшение размера иконок */
+}
+
+/* Стили для ссылок в сайдбаре */
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    word-wrap: break-word; /* Разрешить перенос слов */
+    /* Дополнительные стили */
+}
+
+.sidebar ul li a strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Стили для вложенного списка */
+.sidebar ul li .submenu {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 2px; /* Уменьшаем отступ сверху до 2px */
+    font-size: 14px;
+    color: #555;
+    padding-left: 5px; /* Уменьшаем отступ слева */
+}
+
+/* Уменьшаем отступ между элементами вложенного списка */
+.sidebar ul li .submenu li {
+    margin-bottom: 5px; /* Уменьшаем отступ снизу до 5px */
+}
+
+/* Дополнительно: Убедимся, что нет отступов сверху у элементов вложенного списка */
+.sidebar ul li .submenu li:first-child {
+    margin-top: 0;
+}
+
+/* Опционально: Удаляем дополнительные отступы и паддинги внутри ссылок, если они есть */
+.sidebar ul li .submenu li a {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Предотвращение разрывов слов */
+.sidebar ul li a {
+    word-break: normal; /* Стандартное поведение переноса */
+    white-space: normal; /* Разрешить перенос строк */
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.content h1, .content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stages-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Search Area */
+.search-area {
+    margin: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Form Container */
+.form-container {
+    text-align: center;
+    margin: 40px;
+}
+
+.form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form input[type="file"],
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+form input[type="radio"] {
+    margin-right: 5px;
+}
+
+form button {
+    margin-top: 20px;
+    background-color: #3B873E;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #369f50;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+table th {
+    background-color: #3B873E;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px); /* Adjust according to header/footer height */
+    padding: 20px;
+}
+
+.login-box {
+    width: 350px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.small-link {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+}
+
+.small-link:hover {
+    text-decoration: underline;
+}
+
+/* Profile Section */
+.profile-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.profile-section {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profile-details {
+    flex: 2;
+    min-width: 200px;
+    margin-left: 20px;
+}
+
+.profile-details p {
+    margin-bottom: 10px;
+}
+
+.password-section {
+    margin-top: 30px;
+}
+
+.password-section h3 {
+    margin-bottom: 20px;
+}
+
+.password-section form label {
+    font-weight: bold;
+}
+
+.password-section form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+/* Footer */
+footer {
+    background-color: #3B873E;
+    height: 40px;
+    margin-top: 30px;
+    text-align: center;
+    padding: 11px;
+    color: white;
+}
+
+.footer-content {
+    /* Add styles for footer if needed */
+}
+
+/* ------------------------------------------------------- */
+/* Добавленные стили для формы авторизации */
+
+/* Увеличение максимальной ширины формы авторизации */
+.login-box {
+    max-width: 500px; /* Увеличиваем максимальную ширину формы */
+    width: 100%; /* Обеспечиваем адаптивность */
+}
+
+/* Стили для меток внутри формы авторизации */
+.login-form label {
+    font-size: 14px; /* Уменьшаем размер шрифта для метки */
+    white-space: nowrap; /* Предотвращаем перенос строки */
+    overflow: hidden; /* Скрываем переполнение, если оно случится */
+    text-overflow: ellipsis; /* Добавляем многоточие при переполнении */
+}
+
+/* Центрирование элементов внутри формы авторизации */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Выровнять метки и поля ввода по левому краю */
+.login-form label,
+.login-form input,
+.login-form button {
+    width: 100%;
+    text-align: left;
+}
+
+/* Центрирование кнопки */
+.login-form button {
+    width: 100%;
+    text-align: center;
+}
+
+/* Дополнительная адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+    .login-box {
+        max-width: 90%; /* Уменьшаем максимальную ширину на маленьких экранах */
+        padding: 20px; /* Уменьшаем внутренние отступы */
+    }
+
+    .login-form label {
+        font-size: 13px; /* Дополнительно уменьшаем размер шрифта на мобильных устройствах */
+    }
+}
